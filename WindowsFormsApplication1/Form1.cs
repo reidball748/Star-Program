@@ -1,7 +1,7 @@
 ﻿//Interactive Greeting Card 
 //Reid Ball
 //September 2016 
-//Purpose is to have the sceern clicked and display a constellation with information about it
+//Purpose is to have the sceern clicked and display a constellation with information about it //
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
