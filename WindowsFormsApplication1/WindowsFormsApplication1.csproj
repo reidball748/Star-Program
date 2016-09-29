@@ -65,6 +65,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -78,6 +79,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MAGICAL_SHIMMER_ZAP_FREE_SOUND_EFFECT.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sound_effects_-_Crickets_at_night.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sound_effects_-_Crickets_at_night_1_.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MAGICAL_SHIMMER_ZAP_FREE_SOUND_EFFECT_1_.wav" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

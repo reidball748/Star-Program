@@ -1,7 +1,7 @@
 ﻿//Interactive Greeting Card 
 //Reid Ball
 //September 2016 
-//Purpose is to have the sceern clicked and display a constellation with information about it ////
+//Purpose is to have the screen clicked and display a constellation with information about it 
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,6 +12,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Threading; 
 using System.Windows.Forms;
+using System.Media; 
 
 namespace WindowsFormsApplication1
 {
@@ -32,9 +33,11 @@ namespace WindowsFormsApplication1
             SolidBrush starBrush = new SolidBrush(Color.White);
             SolidBrush backGroundStarBrush = new SolidBrush(Color.White);
             formGraphics.Clear(Color.FromArgb(255, 0, 0, 20));
+            Thread.Sleep(500);
 
-            Thread.Sleep(500); //making the back groundstars 
-            formGraphics.FillEllipse(backGroundStarBrush, 230, 125, 5, 5);
+            SoundPlayer starPlayer = new SoundPlayer(Properties.Resources.MAGICAL_SHIMMER_ZAP_FREE_SOUND_EFFECT_1_); //sound to accompany the making of the stars
+            starPlayer.Play();
+            formGraphics.FillEllipse(backGroundStarBrush, 230, 125, 5, 5); //making the back groundstars
             Thread.Sleep(75);
             formGraphics.FillEllipse(backGroundStarBrush, 290, 70, 5, 5);
             Thread.Sleep(75);
@@ -69,7 +72,7 @@ namespace WindowsFormsApplication1
             formGraphics.FillEllipse(backGroundStarBrush, 425, 440, 5, 5);
             Thread.Sleep(75);
             formGraphics.FillEllipse(backGroundStarBrush, 410, 165, 5, 5);
-            Thread.Sleep(75);
+            Thread.Sleep(75); //1850
 
             formGraphics.FillEllipse(starBrush, 300, 25, 10, 10); //drawing the constellation
             Thread.Sleep(150);
@@ -112,7 +115,7 @@ namespace WindowsFormsApplication1
             formGraphics.DrawLine(starPen, 189, 419, 189, 386);
             Thread.Sleep(150);
             formGraphics.DrawLine(starPen, 332, 389, 241, 446);
-            Thread.Sleep(500);
+            Thread.Sleep(500); //12350 
 
             starBrush.Color = Color.Red; //drawing the constellation again but in a different colour and redrawing the back ground stars
             starPen.Color = Color.Red;
@@ -463,30 +466,35 @@ namespace WindowsFormsApplication1
             formGraphics.DrawLine(starPen, 304, 157, 334, 244);
             formGraphics.DrawLine(starPen, 334, 244, 380, 315);
             formGraphics.DrawLine(starPen, 189, 419, 189, 386);
-            formGraphics.DrawLine(starPen, 332, 389, 241, 446);
+            formGraphics.DrawLine(starPen, 332, 389, 241, 446); //15850
 
-            Font starFont = new Font("Comic Sans MS", 20, FontStyle.Bold); //writing the text about the constellation
-            SolidBrush drawBrush = new SolidBrush(Color.White);
-            formGraphics.DrawString("Scorpius is", starFont, drawBrush, 0, 0);
+            SoundPlayer cricketPlayer = new SoundPlayer(Properties.Resources.Sound_effects___Crickets_at_night_1_); //sound to accompany the information
+            cricketPlayer.Play();
+            Font starFont = new Font("Comic Sans MS", 20, FontStyle.Italic); //writing the text about the constellation
+            Font titleStarFont = new Font("Comic Sans MS", 30, FontStyle.Bold);
+            SolidBrush textBrush = new SolidBrush(Color.Cyan);
+            formGraphics.DrawString("Scorpius", starFont, textBrush, 0, 0);
+            textBrush.Color = Color.White; 
+            formGraphics.DrawString("Scorpius is", starFont, textBrush, 0, 33);
             Thread.Sleep(500);
-            formGraphics.DrawString("one of the", starFont, drawBrush, 0, 28);
+            formGraphics.DrawString("one of the", starFont, textBrush, 0, 61);
             Thread.Sleep(500);
-            formGraphics.DrawString("constellations of ", starFont, drawBrush, 0, 56);
+            formGraphics.DrawString("constellations of ", starFont, textBrush, 0, 89);
             Thread.Sleep(500); 
-            formGraphics.DrawString("the zodiac.", starFont, drawBrush, 0, 86);
+            formGraphics.DrawString("the zodiac.", starFont, textBrush, 0, 117);
             Thread.Sleep(500);
-            formGraphics.DrawString("Its name is ", starFont, drawBrush, 0, 116);
+            formGraphics.DrawString("Its name is ", starFont, textBrush, 0, 145);
             Thread.Sleep(500);
-            formGraphics.DrawString("Latin for scorpion.", starFont, drawBrush, 0, 146);
+            formGraphics.DrawString("Latin for scorpion.", starFont, textBrush, 0, 173);
             Thread.Sleep(500);
-            formGraphics.DrawString("It lies between ", starFont, drawBrush, 0, 176);
+            formGraphics.DrawString("It lies between ", starFont, textBrush, 0, 201);
             Thread.Sleep(500);
-            formGraphics.DrawString("Libra to the west.", starFont, drawBrush, 0, 206);
+            formGraphics.DrawString("Libra to the west.", starFont, textBrush, 0, 229);
             Thread.Sleep(500); 
-            formGraphics.DrawString("and Sagittarius ", starFont, drawBrush, 0, 236);
+            formGraphics.DrawString("and Sagittarius ", starFont, textBrush, 0, 257);
             Thread.Sleep(500);
-            formGraphics.DrawString("to the east.", starFont, drawBrush, 0, 266);
-            Thread.Sleep(500);
+            formGraphics.DrawString("to the east.", starFont, textBrush, 0, 285);
+            Thread.Sleep(5000);
 
         }
     }
